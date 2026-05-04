@@ -84,6 +84,8 @@ body {
   z-index: 5;
 
   opacity: 0; /* começa invisível */
+
+  text-align: center; /* 👈 centraliza conteúdo */
 }
 
 /* TEXTO */
@@ -95,10 +97,11 @@ body {
 /* VÍDEO */
 .carta video {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
+  margin: 10px auto;
   border-radius: 10px;
-  object-fit: contain;
 }
 
 /* ANIMAÇÃO ABRIR */
