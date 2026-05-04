@@ -83,8 +83,9 @@ body {
 
   z-index: 3;
 
-  height: 220px; /* 👈 tamanho suficiente */
-  overflow: hidden;
+  /* 🔥 ESSA PARTE RESOLVE TUDO */
+  max-height: 80%;
+  overflow-y: auto;
 }
 
 /* TEXTO */
