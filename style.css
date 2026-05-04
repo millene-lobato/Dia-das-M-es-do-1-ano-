@@ -6,7 +6,8 @@ body {
 
 /* FOTO */
 .foto {
-  width: 300px;
+  width: 80vw;
+  max-width: 500px;
   border-radius: 20px;
   margin-top: 30px;
 }
@@ -20,8 +21,10 @@ body {
 .envelope {
   position: relative;
   overflow: hidden;
-  width: 250px;
-  height: 150px;
+  width: 80vw;
+  max-width: 500px;
+  height: 30vw;
+  max-height: 300px;
   margin: 30px auto;
   cursor: pointer;
 }
