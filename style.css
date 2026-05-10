@@ -25,9 +25,11 @@ body {
   position: relative;
   width: 90%;
   max-width: 400px;
-  height: 260px; /* 🔥 aumentado */
+  min-height: 260px; /* 🔥 agora adapta melhor */
   margin: 30px auto;
   cursor: pointer;
+
+  overflow: visible; /* 🔥 evita cortar a carta */
 }
 
 /* CORPO */
@@ -47,8 +49,10 @@ body {
   height: 100%;
   background: #ff8fab;
   clip-path: polygon(0 0, 50% 50%, 100% 0);
+
   transform-origin: top;
-  transition: 0.6s;
+  transition: transform 0.6s ease;
+
   z-index: 4;
 }
 
@@ -57,10 +61,12 @@ body {
   position: absolute;
   top: 60%;
   left: 50%;
+
   transform: translate(-50%, -50%);
   font-size: 50px;
+
   z-index: 5;
-  transition: 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .envelope:hover .coracao {
@@ -76,23 +82,27 @@ body {
 
   background: white;
   padding: 15px;
-  border-radius: 10px;
-
-  transform: translateY(120%);
-  transition: all 0.7s ease;
+  border-radius: 15px;
 
   z-index: 5;
+
   opacity: 0;
 
   text-align: center;
-  box-sizing: border-box; /* 🔥 corrige desalinhamento */
+  box-sizing: border-box;
 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* extra bonito */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+  /* 🔥 AGORA FUNCIONA COM QUALQUER VÍDEO */
+  transform: translateY(100%);
+  transition:
+    transform 0.7s ease,
+    opacity 0.7s ease;
 }
 
 /* TEXTO */
 .carta p {
-  margin: 5px 0;
+  margin: 5px 0 10px;
   font-size: 18px;
 }
 
@@ -100,9 +110,14 @@ body {
 .carta video {
   width: 100%;
   height: auto;
+
   display: block;
-  margin: 10px auto;
+  margin: 0 auto;
+
   border-radius: 10px;
+
+  max-height: 300px; /* 🔥 evita vídeos gigantes */
+  object-fit: contain;
 }
 
 /* ANIMAÇÃO ABRIR */
@@ -111,17 +126,21 @@ body {
 }
 
 .envelope.aberto .carta {
-  transform: translateY(-80%); /* 🔥 corrigido */
+  transform: translateY(-100%);
   opacity: 1;
 }
 
 /* BOTÃO */
 #playMusic {
   margin-top: 10px;
-  padding: 8px 15px;
+  padding: 10px 18px;
+
   border: none;
   border-radius: 20px;
+
   background: #ff4d6d;
   color: white;
+
   cursor: pointer;
+  font-size: 16px;
 }
