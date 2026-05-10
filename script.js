@@ -1,72 +1,78 @@
 const envelope = document.querySelector(".envelope");
+
 const musica = document.getElementById("musica");
+
 const botao = document.getElementById("playMusic");
-const video = document.getElementById("video");
+
+const slides = document.getElementById("slides");
 
 let tocando = false;
-let coracoesAtivos = false;
 
-// ABRIR CARTA
+let intervaloCoracoes;
+
+/* =========================
+   ABRIR CARTA
+========================= */
+
 function abrirCarta() {
 
   envelope.classList.toggle("aberto");
 
-  // inicia corações só uma vez
-  if (!coracoesAtivos) {
+  // SE ABRIR
+  if (envelope.classList.contains("aberto")) {
 
-    setInterval(criarCoracao, 300);
+    intervaloCoracoes =
+      setInterval(criarCoracao, 300);
 
-    coracoesAtivos = true;
+  }
+
+  // SE FECHAR
+  else {
+
+    clearInterval(intervaloCoracoes);
   }
 }
 
-// PLAY E PAUSE DA MÚSICA
+/* =========================
+   PLAY / PAUSE MÚSICA
+========================= */
+
 botao.addEventListener("click", () => {
 
   if (tocando) {
 
     musica.pause();
-    botao.innerHTML = "▶ Tocar música";
 
-  } else {
+    botao.innerHTML =
+      "▶ Tocar música";
+  }
+
+  else {
 
     musica.play();
-    botao.innerHTML = "⏸ Pausar música";
+
+    botao.innerHTML =
+      "⏸ Pausar música";
   }
 
   tocando = !tocando;
 });
 
-// QUANDO O VÍDEO TOCAR
-video.addEventListener("play", () => {
+/* =========================
+   CORAÇÕES
+========================= */
 
-  musica.pause();
-
-  tocando = false;
-
-  botao.innerHTML = "▶ Tocar música";
-});
-
-// QUANDO O VÍDEO TERMINAR
-video.addEventListener("ended", () => {
-
-  musica.play();
-
-  tocando = true;
-
-  botao.innerHTML = "⏸ Pausar música";
-});
-
-// CRIAR CORAÇÕES
 function criarCoracao() {
 
-  const heart = document.createElement("div");
+  const heart =
+    document.createElement("div");
 
   heart.classList.add("heart");
 
   heart.innerHTML = "💖";
 
-  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.left =
+    Math.random() * 100 + "vw";
 
   heart.style.fontSize =
     Math.random() * 20 + 15 + "px";
@@ -74,6 +80,59 @@ function criarCoracao() {
   document.body.appendChild(heart);
 
   setTimeout(() => {
+
     heart.remove();
+
   }, 5000);
+}
+
+/* =========================
+   CARROSSEL
+========================= */
+
+let index = 0;
+
+let startX = 0;
+
+let endX = 0;
+
+/* TOQUE COMEÇA */
+slides.addEventListener("touchstart", (e) => {
+
+  startX =
+    e.touches[0].clientX;
+});
+
+/* TOQUE TERMINA */
+slides.addEventListener("touchend", (e) => {
+
+  endX =
+    e.changedTouches[0].clientX;
+
+  trocarSlide();
+});
+
+/* TROCAR FOTO */
+function trocarSlide() {
+
+  // ESQUERDA
+  if (startX - endX > 50) {
+
+    if (index < 2) {
+
+      index++;
+    }
+  }
+
+  // DIREITA
+  else if (endX - startX > 50) {
+
+    if (index > 0) {
+
+      index--;
+    }
+  }
+
+  slides.style.transform =
+    `translateX(-${index * 100}%)`;
 }

@@ -3,50 +3,63 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
+
   <title>Cartinha 💖</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- MÚSICA -->
-<audio id="musica" loop>
-  <source src="Fico Assim Sem Você.mpeg" type="audio/mpeg">
-</audio>
+  <!-- MÚSICA -->
+  <audio id="musica" loop>
+    <source src="Fico Assim Sem Você.mpeg" type="audio/mpeg">
+  </audio>
 
-<!-- BOTÃO MÚSICA -->
-<button id="playMusic">▶ Tocar música</button>
+  <!-- BOTÃO -->
+  <button id="playMusic">▶ Tocar música</button>
 
-<!-- CORAÇÕES -->
-<div id="hearts-container"></div>
+  <div class="container">
 
-<div class="container">
+    <!-- FOTO -->
+    <img src="foto1.jpeg" class="foto">
 
-  <!-- FOTO -->
-  <img src="foto1.jpeg" class="foto">
+    <!-- ENVELOPE -->
+    <div class="envelope" onclick="abrirCarta()">
 
-  <!-- ENVELOPE -->
-  <div class="envelope" onclick="abrirCarta()">
+      <div class="tampa"></div>
 
-    <div class="tampa"></div>
-    <div class="corpo"></div>
+      <div class="corpo"></div>
 
-    <div class="coracao">❤️</div>
+      <div class="coracao">❤️</div>
 
-    <!-- CARTA -->
-    <div class="carta" id="carta">
+      <!-- CARTA -->
+      <div class="carta" id="carta">
 
-      <p>Oi 💕 fiz isso pra você</p>
+        <p>Oi 💕 fiz isso pra você</p>
 
-      <video id="video" controls>
-        <source src="video.mp4" type="video/mp4">
-      </video>
+        <!-- CARROSSEL -->
+        <div class="carrossel">
+
+          <div class="slides" id="slides">
+
+            <img src="foto2.jpeg" class="slide">
+
+            <img src="foto3.jpeg" class="slide">
+
+            <img src="foto4.jpeg" class="slide">
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
   </div>
 
-</div>
+  <script src="script.js"></script>
 
-<script src="script.js"></script>
 </body>
 </html>

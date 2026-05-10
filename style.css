@@ -1,72 +1,97 @@
 body {
   background: linear-gradient(#ffd6e0, #ffc0cb);
+
   text-align: center;
+
   font-family: Arial;
+
   margin: 0;
   padding: 0;
+
   overflow-x: hidden;
 }
 
-/* CONTAINER CENTRAL */
+/* CONTAINER */
 .container {
   max-width: 600px;
+
   margin: auto;
+
   padding-top: 20px;
 }
 
 /* FOTO */
 .foto {
   width: 90%;
+
   max-width: 400px;
+
   border-radius: 20px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* ENVELOPE */
 .envelope {
   position: relative;
+
   width: 90%;
   max-width: 400px;
+
   min-height: 260px;
+
   margin: 30px auto;
+
   cursor: pointer;
+
   overflow: visible;
 }
 
 /* CORPO */
 .corpo {
   position: absolute;
+
   width: 100%;
   height: 100%;
+
   background: #ffb6c1;
+
   border-radius: 10px;
+
   z-index: 2;
 }
 
 /* TAMPA */
 .tampa {
   position: absolute;
+
   width: 100%;
   height: 100%;
+
   background: #ff8fab;
 
   clip-path: polygon(0 0, 50% 50%, 100% 0);
 
   transform-origin: top;
+
   transition: transform 0.6s ease;
 
   z-index: 4;
 }
 
-/* CORAÇÃO */
+/* CORAÇÃO CENTRAL */
 .coracao {
   position: absolute;
+
   top: 60%;
   left: 50%;
 
   transform: translate(-50%, -50%);
+
   font-size: 50px;
 
   z-index: 5;
+
   transition: transform 0.3s ease;
 }
 
@@ -77,12 +102,16 @@ body {
 /* CARTA */
 .carta {
   position: absolute;
+
   width: 95%;
+
   left: 2.5%;
   bottom: 10px;
 
   background: white;
+
   padding: 15px;
+
   border-radius: 15px;
 
   z-index: 5;
@@ -90,6 +119,7 @@ body {
   opacity: 0;
 
   text-align: center;
+
   box-sizing: border-box;
 
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -104,21 +134,10 @@ body {
 /* TEXTO */
 .carta p {
   margin: 5px 0 10px;
+
   font-size: 18px;
-}
 
-/* VÍDEO */
-.carta video {
-  width: 100%;
-  height: auto;
-
-  display: block;
-  margin: 0 auto;
-
-  border-radius: 10px;
-
-  max-height: 300px;
-  object-fit: contain;
+  color: #ff4d6d;
 }
 
 /* ABRIR CARTA */
@@ -133,16 +152,20 @@ body {
 
 /* BOTÃO */
 #playMusic {
-  margin-top: 10px;
-  padding: 10px 18px;
+  margin-top: 15px;
+
+  padding: 12px 20px;
 
   border: none;
+
   border-radius: 20px;
 
   background: #ff4d6d;
+
   color: white;
 
   cursor: pointer;
+
   font-size: 16px;
 
   transition: 0.3s;
@@ -152,20 +175,23 @@ body {
   transform: scale(1.05);
 }
 
-/* CORAÇÕES */
+/* CORAÇÕES SUBINDO */
 .heart {
   position: fixed;
+
   bottom: -20px;
 
   color: pink;
 
+  pointer-events: none;
+
   animation: subir 5s linear forwards;
 
-  pointer-events: none;
   z-index: 999;
 }
 
 @keyframes subir {
+
   0% {
     transform: translateY(0) scale(1);
     opacity: 1;
@@ -175,4 +201,31 @@ body {
     transform: translateY(-110vh) scale(1.5);
     opacity: 0;
   }
+}
+
+/* CARROSSEL */
+.carrossel {
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  margin-top: 10px;
+}
+
+.slides {
+  display: flex;
+
+  transition: transform 0.4s ease;
+}
+
+.slide {
+  width: 100%;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  object-fit: cover;
 }
