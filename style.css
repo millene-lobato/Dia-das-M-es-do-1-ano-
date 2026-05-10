@@ -223,9 +223,13 @@ body {
 .slide {
   width: 100%;
 
+  height: 350px; /* tamanho fixo */
+
   flex-shrink: 0;
 
   border-radius: 12px;
 
   object-fit: cover;
+
+  object-position: center;
 }
