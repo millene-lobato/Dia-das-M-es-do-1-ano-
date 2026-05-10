@@ -64,6 +64,10 @@ body {
   position: relative;
 
   z-index: 1;
+
+  margin-bottom: 60px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* ENVELOPE */
@@ -74,7 +78,7 @@ body {
 
   height: 220px;
 
-  margin-top: -20px;
+  margin-top: 0;
 
   cursor: pointer;
 }
@@ -89,6 +93,8 @@ body {
   background: #ffd1e1;
 
   z-index: 1;
+
+  border-radius: 10px;
 }
 
 /* TAMPA */
@@ -152,20 +158,25 @@ body {
 
   transition: 0.7s;
 
-  z-index: 2;
+  z-index: 10;
 
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+  box-sizing: border-box;
 }
 
-/* ABRIR */
-.envelope.aberto .tampa {
-  transform: rotateX(180deg);
-}
-
+/* ABRIR CARTA */
 .envelope.aberto .carta {
-  transform: translateX(-50%) translateY(-120px);
+  transform: translateX(-50%) translateY(-180px);
 
   opacity: 1;
+}
+
+/* TAMPA VAI PRA TRÁS */
+.envelope.aberto .tampa {
+  transform: rotateX(180deg);
+
+  z-index: 0;
 }
 
 /* TEXTO */
@@ -186,6 +197,7 @@ body {
   border-radius: 15px;
 }
 
+/* SLIDES */
 .slides {
   display: flex;
 
@@ -200,12 +212,16 @@ body {
 
   flex-shrink: 0;
 
-  object-fit: cover;
+  object-fit: contain;
+
+  object-position: center;
 
   border-radius: 15px;
+
+  background: #ffe6ee;
 }
 
-/* BOLINHAS */
+/* INDICADOR */
 .indicador {
   display: flex;
 
@@ -216,6 +232,7 @@ body {
   margin-top: 15px;
 }
 
+/* BOLINHAS */
 .bolinha {
   width: 12px;
   height: 12px;

@@ -13,10 +13,7 @@ let tocando = false;
 
 let intervaloCoracoes;
 
-/* =========================
-   ABRIR CARTA
-========================= */
-
+/* ABRIR CARTA */
 function abrirCarta() {
 
   envelope.classList.toggle("aberto");
@@ -35,10 +32,7 @@ function abrirCarta() {
   }
 }
 
-/* =========================
-   PLAY / PAUSE MÚSICA
-========================= */
-
+/* PLAY / PAUSE */
 botao.addEventListener("click", () => {
 
   if (tocando) {
@@ -46,7 +40,7 @@ botao.addEventListener("click", () => {
     musica.pause();
 
     botao.innerHTML =
-      "▶ Tocar música";
+      "▶ Play Music";
   }
 
   else {
@@ -54,16 +48,13 @@ botao.addEventListener("click", () => {
     musica.play();
 
     botao.innerHTML =
-      "⏸ Pausar música";
+      "⏸ Pause Music";
   }
 
   tocando = !tocando;
 });
 
-/* =========================
-   CORAÇÕES
-========================= */
-
+/* CORAÇÕES */
 function criarCoracao() {
 
   const heart =
@@ -88,10 +79,7 @@ function criarCoracao() {
   }, 5000);
 }
 
-/* =========================
-   CARROSSEL
-========================= */
-
+/* CARROSSEL */
 let index = 0;
 
 let startX = 0;
@@ -140,10 +128,7 @@ function trocarSlide() {
   atualizarIndicador();
 }
 
-/* =========================
-   INDICADOR
-========================= */
-
+/* INDICADOR */
 function atualizarIndicador() {
 
   bolinhas.forEach((bolinha) => {
