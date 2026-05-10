@@ -65,7 +65,7 @@ body {
 
   z-index: 1;
 
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
@@ -110,9 +110,14 @@ body {
 
   transform-origin: top;
 
-  transition: 0.7s;
+  transition: transform 0.7s ease;
 
   z-index: 5;
+}
+
+/* TAMPA ABERTA */
+.envelope.aberto .tampa {
+  transform: rotateX(180deg);
 }
 
 /* CORAÇÃO */
@@ -127,7 +132,7 @@ body {
 
   font-size: 70px;
 
-  z-index: 4;
+  z-index: 6;
 
   transition: 0.3s;
 }
@@ -170,13 +175,6 @@ body {
   transform: translateX(-50%) translateY(-230px);
 
   opacity: 1;
-}
-
-/* TAMPA VAI PRA TRÁS */
-.envelope.aberto .tampa {
-  transform: rotateX(180deg);
-
-  z-index: 0;
 }
 
 /* TEXTO */
