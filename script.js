@@ -21,15 +21,14 @@ function abrirCarta() {
 
   envelope.classList.toggle("aberto");
 
-  // SE ABRIR
+  // ABRIR
   if (envelope.classList.contains("aberto")) {
 
     intervaloCoracoes =
       setInterval(criarCoracao, 300);
-
   }
 
-  // SE FECHAR
+  // FECHAR
   else {
 
     clearInterval(intervaloCoracoes);
@@ -99,14 +98,13 @@ let startX = 0;
 
 let endX = 0;
 
-/* TOQUE COMEÇA */
+/* TOQUE */
 slides.addEventListener("touchstart", (e) => {
 
   startX =
     e.touches[0].clientX;
 });
 
-/* TOQUE TERMINA */
 slides.addEventListener("touchend", (e) => {
 
   endX =
