@@ -6,6 +6,9 @@ const botao = document.getElementById("playMusic");
 
 const slides = document.getElementById("slides");
 
+const bolinhas =
+  document.querySelectorAll(".bolinha");
+
 let tocando = false;
 
 let intervaloCoracoes;
@@ -135,4 +138,21 @@ function trocarSlide() {
 
   slides.style.transform =
     `translateX(-${index * 100}%)`;
+
+  atualizarIndicador();
+}
+
+/* =========================
+   INDICADOR
+========================= */
+
+function atualizarIndicador() {
+
+  bolinhas.forEach((bolinha) => {
+
+    bolinha.classList.remove("ativa");
+  });
+
+  bolinhas[index]
+    .classList.add("ativa");
 }

@@ -209,29 +209,109 @@ body {
 
   overflow: hidden;
 
-  border-radius: 12px;
+  border-radius: 15px;
 
-  margin-top: 10px;
+  margin-top: 15px;
+
+  position: relative;
 }
 
+/* ÁREA DOS SLIDES */
 .slides {
   display: flex;
 
   transition: transform 0.4s ease;
 }
 
+/* IMAGENS */
 .slide {
   width: 100%;
 
-  height: 60vw;
-
-  max-height: 400px;
-
-  min-height: 250px;
+  height: 320px;
 
   flex-shrink: 0;
 
-  border-radius: 12px;
+  border-radius: 15px;
 
-  object-fit: cover;
+  object-fit: contain;
+
+  object-position: center;
+
+  background: #ffe6ee;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+}
+
+/* INDICADOR */
+.indicador {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+/* BOLINHAS */
+.bolinha {
+  width: 10px;
+
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #ffb3c7;
+
+  transition: 0.3s;
+}
+
+/* BOLINHA ATIVA */
+.bolinha.ativa {
+  background: #ff4d6d;
+
+  transform: scale(1.3);
+}
+
+/* SETAS */
+.seta {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 30px;
+
+  color: white;
+
+  background: rgba(255, 77, 109, 0.7);
+
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 10;
+
+  pointer-events: none;
+}
+
+/* ESQUERDA */
+.seta-esquerda {
+  left: 10px;
+}
+
+/* DIREITA */
+.seta-direita {
+  right: 10px;
 }
