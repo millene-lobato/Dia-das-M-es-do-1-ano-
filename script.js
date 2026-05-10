@@ -7,16 +7,22 @@ let tocando = false;
 let coracoesAtivos = false;
 
 // ABRIR CARTA
+let intervaloCoracoes;
+
 function abrirCarta() {
 
   envelope.classList.toggle("aberto");
 
-  // inicia corações só uma vez
-  if (!coracoesAtivos) {
+  // SE ABRIR A CARTA
+  if (envelope.classList.contains("aberto")) {
 
-    setInterval(criarCoracao, 300);
+    // inicia os corações
+    intervaloCoracoes = setInterval(criarCoracao, 300);
 
-    coracoesAtivos = true;
+  } else {
+
+    // para os corações
+    clearInterval(intervaloCoracoes);
   }
 }
 
